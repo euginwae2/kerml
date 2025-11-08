@@ -1,14 +1,14 @@
-# kerml
+# go-kerml
 
-A compact, idiomatic Go implementation of the KerML kernel.  
+A compact, idiomatic Go implementation of the KerML kernel.
 This package provides a minimal semantic core for building modeling tools, language adapters, and persistence layers that rely on a small, well‑defined kernel.
 
 ---
 
 ## Overview
 
-**kerml** implements the canonical kernel primitives used as a semantic foundation for modeling languages.  
-The package focuses on a small, stable API surface: identity, core element interfaces, a lightweight expression AST and evaluator, and a pluggable store abstraction.  
+**go-kerml** implements the canonical kernel primitives used as a semantic foundation for modeling languages.
+The package focuses on a small, stable API surface: identity, core element interfaces, a lightweight expression AST and evaluator, and a pluggable store abstraction.
 The kernel is intentionally minimal so downstream packages can remain thin and focused.
 
 ---
@@ -26,24 +26,26 @@ The kernel is intentionally minimal so downstream packages can remain thin and f
 ## Package Layout
 
 ```
-/euginwae2/kerml
-  ├─ id.go            // ID type and utilities
-  ├─ element.go       // Element, Type, Feature interfaces
-  ├─ expr
-  │   ├─ ast.go       // expression AST nodes
-  │   └─ eval.go      // evaluator and runtime
-  ├─ store
-  │   ├─ store.go     // Store interface
-  │   └─ memstore.go  // in-memory reference store
-  ├─ validate.go      // kernel-level validators
-  └─ examples         // small usage examples and tests
+
+/euginwae2/go-kerml
+├─ id.go            // ID type and utilities
+├─ element.go       // Element, Type, Feature interfaces
+├─ expr
+│   ├─ ast.go       // expression AST nodes
+│   └─ eval.go      // evaluator and runtime
+├─ store
+│   ├─ store.go     // Store interface
+│   └─ memstore.go  // in-memory reference store
+├─ validate.go      // kernel-level validators
+└─ examples         // small usage examples and tests
+
 ```
 
 **Package responsibilities**
 
-- **euginwae2/kerml** exposes the kernel public API and core semantics.
-- **euginwae2/kerml/expr** contains the expression AST and evaluator used by constraints.
-- **euginwae2/kerml/store** defines the `Store` interface and ships a `memstore` for development and tests.
+- **euginwae2/go-kerml** exposes the kernel public API and core semantics.
+- **euginwae2/go-kerml/expr** contains the expression AST and evaluator used by constraints.
+- **euginwae2/go-kerml/store** defines the `Store` interface and ships a `memstore` for development and tests.
 - **examples** contains round‑trip and unit examples that exercise kernel semantics.
 
 ---
@@ -76,7 +78,7 @@ type Element interface {
 // pkg/kerml/store/store.go
 package store
 
-import "github.com/yourorg/kerml/pkg/kerml"
+import "[github.com/yourorg/go-kerml/pkg/kerml](https://github.com/yourorg/go-kerml/pkg/kerml)"
 
 type Store interface {
     Put(e kerml.Element) error
@@ -93,14 +95,14 @@ type Store interface {
 Add the package to your module:
 
 ```bash
-go get github.com/euginwae2/kerml@v0.0.0
+go get [github.com/euginwae2/go-kerml@v0.0.0](https://github.com/euginwae2/go-kerml@v0.0.0)
 ```
 
 Run tests locally:
 
 ```bash
-git clone https://github.com/euginwae2/kerml.git
-cd kerml
+git clone [https://github.com/euginwae2/go-kerml.git](https://github.com/euginwae2/go-kerml.git)
+cd go-kerml
 go test ./...
 ```
 
@@ -113,8 +115,8 @@ package main
 
 import (
     "fmt"
-    "github.com/euginwae2/kerml/pkg/kerml"
-    "github.com/euginwae2/kerml/pkg/kerml/store"
+    "[github.com/euginwae2/go-kerml/pkg/kerml](https://github.com/euginwae2/go-kerml/pkg/kerml)"
+    "[github.com/euginwae2/go-kerml/pkg/kerml/store](https://github.com/euginwae2/go-kerml/pkg/kerml/store)"
 )
 
 func main() {
